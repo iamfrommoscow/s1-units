@@ -1,4 +1,3 @@
-import React from 'react'
 import {sortByItemCount, sortByDate, sortByItemNames, sortOrders, sortTypes} from './sortOrders';
 
 const nullOrders = (func) => {
@@ -146,7 +145,7 @@ describe('sortByItemNames function', () => {
 		nullItems(sortByItemNames);
 	});
 
-	it('first item name later then second item name', () => {
+	it('first item name string < then second item name string', () => {
 		const order1 = {
 			items: ['ab', 'ba'],
 		};
@@ -157,7 +156,7 @@ describe('sortByItemNames function', () => {
 		expect(result).toBe(-1);
 	});
 
-	it('first item name later then second item name', () => {
+	it('first item name string > then second item name string', () => {
 		const order1 = {
 			items: ['cd', 'dc'],
 		};

@@ -9,15 +9,15 @@ configure({ adapter: new Adapter() });
 
 describe('Order component', () => {
   
-    it('render with default state: snapshot test', () => {
-        const wrapper = shallow(<Order key={0} order={fakeOrders[0]}/>);
+    it('render with component from fakeOrders', () => {
+        const wrapper = shallow(<Order order={fakeOrders[0]}/>);
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 
-    it('order empty items list', ()=>{
+    it('order without items in list', ()=>{
         const order = fakeOrders[0];
         order.items = [];
-        const wrapper = shallow(<Order key={0} order={order}/>);
+        const wrapper = shallow(<Order order={order}/>);
         expect(wrapper).toEqual({});
     });
 });
